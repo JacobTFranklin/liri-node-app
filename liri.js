@@ -33,6 +33,9 @@ axios.get("https://rest.bandsintown.com/artists/" + band + "/events?app_id=codin
 var spotify = new Spotify(keys.spotify);
 if (process.argv[2] == 'spotify-this-song'){
     var song = process.argv.slice(3).join(" ");
+    if (song == ""){
+        song = "The Sign Ace of Base"
+    }
     spotify.search({ type: 'track', query: song, limit: 1}, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
@@ -46,17 +49,20 @@ if (process.argv[2] == 'spotify-this-song'){
 
 //OMDB
 if (process.argv[2] == 'movie-this'){
-var movie = process.argv.slice(3).join(" ");
-axios.get("http://www.omdbapi.com/?apikey=trilogy&t="+movie).then(
-  function(response) {
-    console.log("Movie title: "+response.data.Title);
-    console.log("Released: "+response.data.Released);
-    console.log("IMDB Rating: "+response.data.imdbRating);
-    console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1].Value);
-    console.log("Country Produced: "+response.data.Country);
-    console.log("Language: "+response.data.Language); 
-    console.log("Plot Summary: "+response.data.Plot);
-    console.log("Actors: "+response.data.Actors);
+    var movie = process.argv.slice(3).join(" ");
+    if(movie == ""){
+        movie = "Mr. Nobody"
+    }
+    axios.get("http://www.omdbapi.com/?apikey=trilogy&t="+movie).then(
+        function(response) {
+        console.log("Movie title: "+response.data.Title);
+        console.log("Released: "+response.data.Released);
+        console.log("IMDB Rating: "+response.data.imdbRating);
+        console.log("Rotten Tomatoes Rating: "+response.data.Ratings[1].Value);
+        console.log("Country Produced: "+response.data.Country);
+        console.log("Language: "+response.data.Language); 
+        console.log("Plot Summary: "+response.data.Plot);
+        console.log("Actors: "+response.data.Actors);
   },
   function(error) {
     if (error.response) {
