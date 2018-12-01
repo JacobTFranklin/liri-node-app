@@ -52,11 +52,11 @@ In this case, the linked text file is 'Random.txt'.
 In order to access the text file, pass in 'do-what-it-says' after the LIRI base command. For example:  
 * 'node liri.js do-what-it-says'
 * The text file should contain an API command from above, followed by a comma, and the variable you would the API to call in quotes. For example:  
-![Text](images/text.png)
+![Text](images/text.PNG)
 * Below is an example of the response from above:  
 ![FleetwoodMac](/images/fleetwoodmac.PNG)
 * Below are examples of this command being used to trigger the Spotify and OMDB APIs:  
-![FSSPotify](images/fsSpotify.png)  
+![FSSPotify](images/fsSpotify.PNG)  
 ![FSMovie](images/fsMovie.PNG)  
 
 
