@@ -24,7 +24,7 @@ To make a call to the Spotify API, pass in 'spotify-this-song' followed by the s
 * 'node liri.js spotify-this-song back in black'
 * This will return the song name, the artist, album, and preview link from Spotify for the song entered.
 * Below is a screenshot of this command with its response:  
-![Spotify](../../images/spotifyScreenshot.png)
+![Spotify](../../images/spotifyScreenshot.PNG)
 * If no song is entered, it will default to 'The Sign' by Ace of Base.
 * Below is a screen of the default response:  
 ![SpotifyDefault](images/spotifyDefault.png)
